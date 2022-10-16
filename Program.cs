@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -111,47 +111,33 @@ namespace LoShuMagicSQ
             Queue q = new Queue();
             q.Enqueue(corn00);
             
-            for (j = 0; j == 0; j++)
-            {
                 for (i = 1; i <= 2; i++)
                 {
-                    q.Enqueue((int)arr[i, j]);
-                    arr[i, j] = (int)q.Dequeue();
+                    q.Enqueue((int)arr[i, 0]);
+                    arr[i, 0] = (int)q.Dequeue();
 
                 }
-            }
-                //now from arr20 spot 
-                for (i = 2; i == 2; i++)
-                {
                     for (j = 1; j <= 2; j++)
                     {
-                        q.Enqueue((int)arr[i, j]);
-                        arr[i, j] = (int)q.Dequeue();
+                        q.Enqueue((int)arr[2, j]);
+                        arr[2, j] = (int)q.Dequeue();
 
                     }
-                }
-                //now from arr 22
-                for (j = 2; j == 2; j++)
-                {
                     for (i = 1; i >= 0; i--)
                     {
-                        q.Enqueue((int)arr[i, j]);
-                        arr[i, j] = (int)q.Dequeue();
+                        q.Enqueue((int)arr[i, 2]);
+                        arr[i, 2] = (int)q.Dequeue();
 
                     }
 
-                }
-                //now from arr 02
-                for (i = 0; i == 0; i++)
-                {
                     for (j = 1; j >= 0; j--)
                     {
-                        q.Enqueue((int)arr[i, j]);
-                        arr[i, j] = (int)q.Dequeue();
+                        q.Enqueue((int)arr[0, j]);
+                        arr[0, j] = (int)q.Dequeue();
                        
                     }
                   q.Clear();
-                }
+                
 
             Console.WriteLine("The final form of our magic sqare solution, for the 3x3 ordered grid looks like this....\n");
             sq.sqShow(i, j, arr);
